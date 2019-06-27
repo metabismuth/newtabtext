@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background: #2f3129;
+}
+
+#container {
+  width: 800px;
+  height: 50em;
+  max-height: calc(100vh - 2em - 5px);
+  margin: auto 2em auto auto;
+  flex-shrink: 0;
+}
+
+#editor {
+  scrollbar-color: #626360 #272822;
+  height: 100%;
+  font-size: 12pt;
+  font-family: Fira Mono, Consolas, monospace;
+}
+
+#logo {
+  flex-shrink: 1;
+  width: 100%;
+  background: url("chrome://branding/content/about-logo.png") no-repeat center;
+}
+
+/* horizontal breakpoint */
+@media screen and (max-width: 1150px) {
+  #logo { display: none; }
+
+  #container {
+    width: 100%;
+    height: 100%;
+    max-height: unset;
+    margin: 0;
+  }
+}
+
+/* vertical breakpoint */
+@media screen and (max-height: 900px) {
+  #container {
+    max-height: 100vh;
+    height: 100%;
+    margin: 0;
+  }
+}
